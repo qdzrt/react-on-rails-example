@@ -2,6 +2,7 @@
 // all your dumb component names with Widget.
 
 import React, { PropTypes } from 'react';
+import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 
 // Simple example of a React "dumb" component
 export default class HelloWorldWidget extends React.Component {
@@ -27,14 +28,16 @@ export default class HelloWorldWidget extends React.Component {
         </h3>
         <hr />
         <form className="form-horizontal">
-          <label>
-            Say hello to:
-          </label>
-          <input
-            type="text"
-            value={name}
-            onChange={e => this.handleChange(e)}
-          />
+          <FormGroup>
+            <ControlLabel>
+              Say hello to:
+            </ControlLabel>
+            <FormControl
+              type="text"
+              value={name}
+              onChange={e => this.handleChange(e)}
+            />
+          </FormGroup>
         </form>
       </div>
     );
